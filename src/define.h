@@ -38,7 +38,6 @@ struct Handler
 
 
 // Css file options:
-#define CSSFILE "src/style.css"
 #define INCCSS "style.css"
 #define STYLEIMG "fig img"
 #define STYLEMAIN "main"

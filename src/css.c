@@ -25,10 +25,11 @@ void makeStyle(char* styleName, int argCount, ...)
     va_end(list);
 }
 
-int main()
+int main(int argc, char **argv)
 {
     //Main site css file make
-    css.file = fopen(CSSFILE, "w");
+	printf("%s\n", argv[1]);
+    css.file = fopen(argv[1], "w");
 
     makeStyle(STYLEIMG, 6,  MLEFT, MTOP,
                             PADDING, BORDER,

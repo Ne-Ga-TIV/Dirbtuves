@@ -58,7 +58,7 @@ void addButtonNext(char *id, int numb, int style, int margin)
 
 int main(int argc, char **argv)
 {
-    DIR *imageDir = opendir("src/images");
+    DIR *imageDir = opendir(argv[1]);
     if(!imageDir){
         printf("Sorry, but images dir not found :(\n");
         return 0;

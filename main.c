@@ -4,9 +4,9 @@
 #include <unistd.h>
 #define COMPMAIN_FUNK " gcc src/main_funk.c -c -o src/main_funk.o"
 #define COMPCSS  "gcc src/css.c src/main_funk.o -o src/css"
-#define MAKECSS "src/./css"
+#define MAKECSS "src/./css src/style.css"
 #define COMPSITE "gcc src/Site.c src/main_funk.o -o src/Site"
-#define UPDATEGALLERY "src/./Site"
+#define UPDATEGALLERY "src/./Site src/images"
 
 #define MENUCOUNT 5
 void printMenu(){
@@ -63,25 +63,26 @@ int main()
         switch(getAnster(1, MENUCOUNT))
         {
         case 1:
-            execl("\"src/Paint.html", "\"src/Paint.html\"", NULL);
+            system("src\\Paint.html");
             break;
         case 2:
             system(COMPMAIN_FUNK);
             system(COMPCSS);
             system(COMPSITE);
-            system(MAKECSS);
-            system(UPDATEGALLERY);
+            system("src\\css.exe src\\style.css");
+            system("src\\Site.exe src\\images");
             break;
         case 3:
-            execl("\"src/index.html\"", "\"src/index.html\"", NULL);
+            system("src\\index.html");
             break;
         case 4:
-            execl("\"src/images\"", "\"src/images\"", NULL);
+            system("start src\\images");
             break;
         case 5:
             exit(0);
+		}
 
 
     }
-
+	return 0;
 }
