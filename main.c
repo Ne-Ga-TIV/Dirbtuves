@@ -47,14 +47,15 @@ int main()
             system(UPDATEGALLERY);
             break;
         case 3:
-            execl("/bin/xdg-open", "xdg-open", "src/index.html", NULL);
+            system("xdg-open src/index.html");
+            system("clear");
             break;
         case 4:
-            execl("/bin/xdg-open", "xdg-open", "./src/images", NULL);
+            system("xdg-open ./src/images");
+            system("clear");
             break;
         case 5:
             exit(0);
-
         }
     }
     else{

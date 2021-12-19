@@ -28,7 +28,6 @@ void makeStyle(char* styleName, int argCount, ...)
 int main(int argc, char **argv)
 {
     //Main site css file make
-	printf("%s\n", argv[1]);
     css.file = fopen(argv[1], "w");
 
     makeStyle(STYLEIMG, 6,  MLEFT, MTOP,

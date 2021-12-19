@@ -73,14 +73,14 @@ int main(int argc, char **argv)
     addHead(TITLE, ENCODE, ICONREF);
 
     InputCode(&html, "<body class=\"main\">\n<p class=\"%s\">\n", STYLEIMG);
-
+    printf("Upload files\n****************\n");
     for(struct dirent *dir = readdir(imageDir); dir != NULL; dir = readdir(imageDir)){
         if(dir->d_name[0] == '.')
             continue;
         printf("%s\n", dir->d_name);
         addImage(450, 450, dir->d_name, ++count);
     }
-    
+    printf("****************\nUpload complete ;)\n");
     InputCode(&html,"</p>\n<p>\n");
     
     for(int i = 1; i <= count && count > 1; i++){
