@@ -43,17 +43,17 @@ void addImage(int width, int height, char *src, int counter)
 void addButtonPrev(char *id, int numb, int style, int margin)
 {
     if(style)
-        InputCode(&html,  "<button onclick=\"window.location.href=\'#%s %d\'\" style=\"margin-left: %dpx\" >Previous</button>", id, numb, margin);
+        InputCode(&html,  "<button onclick=\"window.location.href=\'#%s %d\'\" style=\"margin-left: %dpx\" >Prev</button>", id, numb, margin);
     else
-        InputCode(&html, "<button onclick=\"window.location.href=\'#%s %d\'\" сlass=\"btn\">Previous</button>", id, numb);
+        InputCode(&html, "<button onclick=\"window.location.href=\'#%s %d\'\" >Prev</button>", id, numb);
 }
 
 void addButtonNext(char *id, int numb, int style, int margin)
 {
     if(style)
-        InputCode(&html, "<button onclick=\"window.location.href=\'#%s %d\'\" style=\"margin-left: %dpx\">Next</button>\n", id, numb, margin);
+        InputCode(&html, "<button onclick=\"window.location.href=\'#%s %d\'\" style=\"margin-left: %dpx\" >Next</button>\n", id, numb, margin);
     else
-        InputCode(&html, "<button onclick=\"window.location.href=\'#%s %d\'\"сlass=\"btn\">Next</button>\n", id, numb);
+        InputCode(&html, "<button onclick=\"window.location.href=\'#%s %d\'\">Next</button>\n", id, numb);
 }
 
 int main(int argc, char **argv)
@@ -82,24 +82,24 @@ int main(int argc, char **argv)
         addImage(450, 450, dir->d_name, ++count);
     }
     printf("****************\nUpload complete ;)\n");
-    InputCode(&html,"</p>\n<p>\n");
+    InputCode(&html,"</p>\n<div class=\"btn\">\n");
     int i = 1;
     for(; i <= count && count > 1; i++){
         if(i == count)
-            addButtonPrev("photo", i-1, 1, 1000);
+            addButtonPrev("photo", i-1, 1, 884);
         else if (i == 1)
-            addButtonNext("photo", i+1, 1, 910);
+            addButtonNext("photo", i+1, 1, 834);
         else if(i == 2){
-            addButtonPrev("photo", i-1, 1,  1090);
+            addButtonPrev("photo", i-1, 1,  901);
             addButtonNext("photo", i+1, 0, 0);
         }
         else{
-            addButtonPrev("photo", i-1, 1,  1059);
+            addButtonPrev("photo", i-1, 1,  795);
             addButtonNext("photo", i+1, 0, 0);
         }
     }
 
-    InputCode(&html,  "</p>\n</body>\n</html>");
+    InputCode(&html,  "</div>\n</body>\n</html>");
 
     printData(&html);
     clearData(&html);

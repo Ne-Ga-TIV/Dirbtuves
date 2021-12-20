@@ -1,5 +1,7 @@
 <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="PaintStyle.css">
+    <link rel="shortcut icon" href="Icons/paintIcon.png"/>
     <script src="https://cdn.jsdelivr.net/npm/p5@1.4.0/lib/p5.js"></script>
 </head>
 <body>
@@ -9,11 +11,11 @@
             <div class="type">
                 <input type="radio" name="pen-type" id="pen-pencil" checked>
                 <label for="pen-pencil">
-                    <i class="fa fa-pencil"></i>
+                    <i class="fa fa-pencil" style="font-size:24px;"></i>
                 </label>
                 <input type="radio" name="pen-type" id="pen-brush">
                 <label for="pen-brush">
-                    <i class="fa fa-paint-brush"></i>
+                    <i class="fa fa-paint-brush" style="font-size:24px;"></i>
                 </label>
             </div>
             <div class="size">
@@ -25,7 +27,7 @@
                 <input type="color" id="pen-color" value="#000">
             </div>
             <div class="actions">
-                <button id="reset-canvas">HUILA</button>
+                <button id="reset-canvas">Reset</button>
                 <button id="save-canvas">Save</button>
             </div>
         </div>

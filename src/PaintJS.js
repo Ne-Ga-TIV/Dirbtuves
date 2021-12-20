@@ -1,6 +1,7 @@
 function _(selector){
     return document.querySelector(selector);
 }
+
 function setup(){
     let canvas = createCanvas(650, 600);
     canvas.parent("canvas-wrapper");
@@ -18,9 +19,11 @@ function mouseDragged(){
         ellipse(mouseX, mouseY, size, size);
     }
 }
+
 _("#reset-canvas").addEventListener("click",function(){
     background(255);
 });
+
 _("#save-canvas").addEventListener("click",function(){
     saveCanvas(canvas, "sketch", "png");
 });

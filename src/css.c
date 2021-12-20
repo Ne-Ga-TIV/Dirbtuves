@@ -35,10 +35,17 @@ int main(int argc, char **argv)
                             BACKGROUND, MBOTTOM);
                     
 
-    makeStyle("main", 5, "overflow-x: scroll;", "white-space: nowrap;",
+    makeStyle("main", 4, "overflow-x: scroll;", "white-space: nowrap;",
     "background:linear-gradient(to bottom, #0066ff 0%, #ffff99 100%) fixed;", 
-    "overflow-x: scroll;", "margin-bottom: 82px;", "padding: 10px;");
+    "overflow-x: scroll;", "padding: 10px;");
 
+    makeStyle("middle", 4, "position: absolute;", "top: 50%;", "left: 50%;",
+    "transform: translate(-50%,-50%);");
+
+    makeStyle("btn button", 9,"background: linear-gradient(to bottom, #0066ff 0%, #ffff99 100%) fixed;",
+    "position: relative;", "color: black;",
+    "font-size: 28px;", "margin: 30px 0;", "border: 5px ridge #ff7675;", "padding: 14px 60px;",
+    "overflow: hidden;", "cursor:pointer;");
 
     printData(&css);
     clearData(&css);

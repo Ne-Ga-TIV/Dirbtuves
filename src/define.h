@@ -12,7 +12,7 @@
 #define MAINFILE "src/index.html"
 #define CENTER "text-align: center;"
 #define TITLE "Gallery"
-#define ICONREF "color_palette_brush_paint_icon_193916.ico"
+#define ICONREF "Icons/galleryIcon.ico"
 #define ENCODE "utf-8"
 #define BORDER "border: 10px ridge #FF0000;"
 #define PADDING "padding: auto;"
