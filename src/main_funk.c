@@ -19,8 +19,8 @@ void InputCode(struct Handler *out,const char *format, ...)
     va_list factor;         // указатель на необязательный параметр
     va_start(factor, format);   // устанавливаем указатель
     int input = strlen(format);
-   
-    for(char *c = format; *c; c++)
+	char *c;
+    for(c = format; *c; c++)
     {
         if(*c != '%')
         {   
@@ -67,7 +67,8 @@ void overflow(struct Handler *out, int input)
 
 void printData(struct Handler *out)
 {
-    for(int i = 0; i < out->size; i++)
+	int i;
+    for(i = 0; i < out->size; i++)
         if(out->code[i] == '\0')
             out->code[i] = ' ';
 
@@ -76,7 +77,8 @@ void printData(struct Handler *out)
 
 void clearData(struct Handler *out )
 {
-    for (size_t i = 0; i < out->size; i++)
+	unsigned int i = 0;
+    for (; i < out->size; i++)
         out->code[i] = '\0';     
     
     out->size = 0;

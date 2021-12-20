@@ -74,7 +74,8 @@ int main(int argc, char **argv)
 
     InputCode(&html, "<body class=\"main\">\n<p class=\"%s\">\n", STYLEIMG);
     printf("Upload files\n****************\n");
-    for(struct dirent *dir = readdir(imageDir); dir != NULL; dir = readdir(imageDir)){
+	struct dirent *dir;
+    for(dir = readdir(imageDir); dir != NULL; dir = readdir(imageDir)){
         if(dir->d_name[0] == '.')
             continue;
         printf("%s\n", dir->d_name);
@@ -82,8 +83,8 @@ int main(int argc, char **argv)
     }
     printf("****************\nUpload complete ;)\n");
     InputCode(&html,"</p>\n<p>\n");
-    
-    for(int i = 1; i <= count && count > 1; i++){
+    int i = 1;
+    for(; i <= count && count > 1; i++){
         if(i == count)
             addButtonPrev("photo", i-1, 1, 1000);
         else if (i == 1)

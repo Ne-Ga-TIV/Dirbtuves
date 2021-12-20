@@ -2,10 +2,10 @@
 #include <stdio.h>
 #include <stdarg.h>
 #include <unistd.h>
-#define COMPMAIN_FUNK " gcc src/main_funk.c -c -o src/main_funk.o"
-#define COMPCSS  "gcc src/css.c src/main_funk.o -o src/css"
+#define COMPMAIN_FUNK " gcc src/main_funk.c -std=c11 -c -o src/main_funk.o"
+#define COMPCSS  "gcc src/css.c src/main_funk.o -std=c11 -o src/css"
 #define MAKECSS "src/./css src/style.css"
-#define COMPSITE "gcc src/Site.c src/main_funk.o -o src/Site"
+#define COMPSITE "gcc src/Site.c src/main_funk.o -std=c11 -o src/Site"
 #define UPDATEGALLERY "src/./Site src/images"
 
 #define MENUCOUNT 5

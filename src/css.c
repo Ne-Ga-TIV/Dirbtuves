@@ -16,8 +16,8 @@ void makeStyle(char* styleName, int argCount, ...)
     va_start(list, argCount);
 
     InputCode(&css, ".%s{\n ", styleName);
-
-    for(int i = 0; i < argCount; i++)
+	int i;
+    for(i = 0; i < argCount; i++)
         InputCode(&css, "%s\n", va_arg(list, char*));
 
     InputCode(&css, "}\n");
